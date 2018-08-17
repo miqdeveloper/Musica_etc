@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+#Devidos créditos Miqueias
+#https://www.facebook.com/miqueias.costa.754
 from pytube  import YouTube
 from pytube  import Playlist
 
@@ -29,7 +31,9 @@ if (pl == 2):
      
 
 else:
+     print("By Miqueias <3")
      exit()
+    
 
      
      
