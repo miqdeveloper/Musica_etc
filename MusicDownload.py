@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/python
+#!/usr/bin/python3
 from pytube  import YouTube
 from pytube  import Playlist
 from pydub import AudioSegment
-import glob, os, time 
-from  tqdm  import *
-
-
+import glob, os, time
+import platform
 
 
 a = open("lista.txt","r")
@@ -24,14 +22,18 @@ except Exception:
    print("\n")
 
 
-
 for i in glob.glob('*.mp4'):
     ta = os.path.getsize(i)
     f = (ta * 8)
     sound = AudioSegment.from_file(i)
     a = i.replace(".mp4", ".mp3")
-    print(sound.export(a, format="mp3"))
 
-os.system("rm -rf *.mp4 && clear")
+    con = sound.export(a, format="mp3")
+    print(con)
+if platform.system() == "Linux":
+   os.remove("*.mp4")
+if platform.system() == "Windows":
+  for i in glob.glob('*.mp4'):
+    os.remove(i)
 
 exit()
