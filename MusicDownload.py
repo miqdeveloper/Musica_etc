@@ -31,7 +31,9 @@ for i in glob.glob('*.mp4'):
     con = sound.export(a, format="mp3")
     print(con)
 if platform.system() == "Linux":
-   os.remove("*.mp4")
+   for del in glob.glob('*.mp4'):
+    os.remove(del)
+    
 if platform.system() == "Windows":
   for i in glob.glob('*.mp4'):
     os.remove(i)
